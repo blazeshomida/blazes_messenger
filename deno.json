@@ -1,0 +1,18 @@
+{
+  "name": "@blazes/messenger",
+  "description": "Typed event messenger for schema-validated message channels.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "exports": "./src/mod.ts",
+  "tasks": {
+    "fmt": "deno fmt",
+    "lint": "deno lint",
+    "docs:test": "deno test --doc README.md src/mod.ts src/messenger.ts src/types.ts src/errors.ts src/standard-schema.v1.ts",
+    "check": "deno fmt --check && deno lint && deno check src/mod.ts && deno test && deno task docs:test && deno doc --lint src/mod.ts && deno publish --dry-run",
+    "publish:dry-run": "deno publish --dry-run"
+  },
+  "publish": {
+    "include": ["README.md", "LICENSE", "deno.json", "src/**/*.ts"]
+  },
+  "imports": {}
+}
